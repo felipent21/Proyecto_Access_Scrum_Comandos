@@ -1,0 +1,68 @@
+@echo off
+mkdir carpeta
+dir
+echo "cree una carpeta en escritorio"
+timeout 5
+cd ../Downloads
+mkdir carpeta2
+dir
+echo "cree una carpeta en descrgas"
+timeout 5
+cd carpeta2
+ipconfig >ipinfo.txt
+dir
+echo "cree un txt con la informacion de ipconfig"
+timeout 5
+cd ..
+rename carpeta2 carpetainfo
+compact /c
+dir
+echo "le cambiamos el nombre y comprmimimos"
+timeout 5
+move carpetainfo ../Desktop
+cd ../Desktop
+echo "movi la carpetainfo a desktop"
+timeout 5
+dir
+echo "eliminare carpeta de Desktop"
+timeout 5
+rd carpeta
+dir
+echo "ya carpeta no existe"
+timeout 5
+cd ..
+echo "me sali a la raiz para ver arbol de directorios"
+timeout 5
+tree
+echo "ese fue el arbol de directorios"
+timeout 5
+cd Desktop
+echo "regrese a desktop"
+timeout 5
+Icacls *.*
+echo "aca apreciamos los permisos"
+icacls ./carpetainfo /deny afnunest:F /T
+Icacls *.*
+echo "me quite los accesos a carpetainfo"
+timeout 5
+cd carpetainfo
+echo "no me dejo entrar"
+icacls ./carpetainfo /grant afnunest:F /T
+Icacls *.*
+echo "me otorgue los permisos"
+timeout 5
+cd carpetainfo
+echo "pude entrar"
+dir
+echo "aca sigue mi archivo ipinfo.txt"
+cd ..
+echo "esta es la fecha de hoy dale enter"
+date
+echo "vete a chrome amigo"
+timeout 5
+start chrome https://felipent21.atlassian.net/jira/your-work
+
+
+
+
+
